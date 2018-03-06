@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NinetyNineCats</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+
+  <body>
+    <% if logged_in? %>
+    <ul>
+      <li>Logged in as: <%= current_user.username %></li>
+      <li><%= button_to 'Logout', "/sessions/:id", method: :delete  %></li>
+    </ul>
+    <% else %>
+    <ul>
+      <li><%= button_to 'Log-in', new_session_url  %>
+      <li><%= button_to 'Sign-up', new_user_url %>
+    </ul>
+    <% end %>
+
+
+
+  <%= yield %>
+  </body>
+</html>

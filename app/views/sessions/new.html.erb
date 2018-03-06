@@ -1,0 +1,18 @@
+<h1>Log In</h1>
+
+<form class="" action="<%= sessions_url%>" method="post">
+  <input type="hidden"
+   name="authenticity_token"
+   value="<%=form_authenticity_token %>">
+
+   <!-- Any form that does not upload the form_authenticity_token will cause Rails to throw an error, because it won't know if the POST request is coming "cross-site".-->
+
+   <label for="user_username">Username</label>
+   <input id="user_username" type="text" name="user[username]">
+   <br>
+   <label for="user_password">Password</label>
+   <input id="user_username" type="password" name="user[password]" >
+
+   <input type="submit" value="Log In">
+
+</form>

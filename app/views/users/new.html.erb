@@ -1,0 +1,14 @@
+<h2> Create username and password or click on existing_user link to sign in </h2>
+
+<form class="" action="<%= users_url %>" method="post">
+  <p><%= link_to 'existing_user', new_session_url  %></p>
+
+  <label for="username">Username</label>
+  <input id="username" type="text" name="user[username]">
+  <br>
+  <label for="password">Password</label>
+  <input type="password" name="user[password]">
+
+  <input type="submit" name="" value="Create User">
+
+</form>

@@ -31,6 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_cat_ownership
-    
+    return if current_user.cats.find(params[:id])
+    redirect_to cat_url(current_cat)
   end
 end

@@ -13,6 +13,8 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: 'Cat'
 
+  has_many :cat_requests
+
   def self.find_by_credentials(user_name, password)
     user = User.find_by(username: user_name)
     return user if user && BCrypt::Password.new(user.password_digest).is_password?(password)
